@@ -1,0 +1,134 @@
+.background-yellow { background-color: yellow; }
+.background-blue   { background-color: blue; }
+.background-red    { background-color: red; }
+.color-white       { color: white; }
+
+.my-theme {
+    background-color: red;
+    color: yellow;
+}
+
+p#p2 {
+    background-color: blue;
+    color: white;
+}
+
+#p3 {
+    background-color: red;
+    color: white;
+}
+
+p {
+    color: green;
+}
+
+p#p1 {
+    background-color: yellowgreen;
+}
+
+
+.border-fat {
+    border-width: 20px 30px 20px 30px;
+    /*border-top-width: 20px;*/
+    /*border-left-width: 30px;*/
+    /*border-bottom-width: 20px;*/
+    /*border-right-width: 30px;*/
+}
+.border-thin {
+    border-width: 4px;
+}
+.border-solid {
+    border-style: solid;
+}
+.border-dashed {
+    border-style: dashed;
+}
+.border-yellow {
+    border-color: #ffff07;
+}
+.border-red {
+    border-color: #ff7070;
+}
+.border-blue {
+    border-color: #7070ff;
+}
+
+.padding-fat {
+    padding: 30px;
+}
+
+
+
+.padded-top-left {
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+
+.rounded-corners-top {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.width-50pc {
+    width: 50%;
+}
+
+.width-33pc {
+    width: 33%;
+}
+
+.float-left {
+    float: left
+}
+
+.clear-both {
+    clear: both;
+}
+
+.height-150px {
+    height: 150px;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.smaller-width {
+    width: 300px;
+    overflow: auto;
+}
+
+.width-500px {
+    width: 500px;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+    body {
+        background-color: yellow;
+    }
+    .media-query {
+        background-color: red;
+        color: white;
+    }
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+    body {
+        background-color: blue;
+        color: white;
+    }
+    .media-query {
+        background-color: yellow;
+        color: black;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1800px) {
+    body {
+        background-color: red;
+        color: white;
+    }
+    .media-query {
+        background-color: blue;
+        color: white;
+    }
+}

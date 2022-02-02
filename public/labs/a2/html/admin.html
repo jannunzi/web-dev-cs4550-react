@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Title</title>
+</head>
+<body>
+
+<h1>Admin Screen</h1>
+
+<table border="1" width="100%">
+ <thead>
+ <tr>
+  <th><label for="username">Username</label></th>
+  <th>Favorite Colors</th>
+  <th>Movie Genres</th>
+  <th>Marital Status</th>
+  <th>Tenured?</th>
+  <th>Bio</th>
+  <th>Password</th>
+  <th>Email</th>
+  <th>Salary</th>
+  <th>Role</th>
+  <th>Last Name</th>
+ </tr>
+ <tr>
+  <th>
+   <input
+    size="2"
+    id="username"
+    type="text"
+    placeholder="john"
+    title="Please provide your username"/>
+  </th>
+  <th width="300px">
+   <input id="yellow" name="fcolor" type="checkbox"/>
+   <label for="yellow">Yellow</label>
+   <br/>
+   <label><input name="fcolor" type="checkbox"/>Red</label>
+   <br/>
+   <input name="fcolor" type="checkbox"/>Blue
+  </th>
+  <th width="300px">
+   <input name="genre" type="checkbox"/>Horror<br/>
+   <input name="genre" type="checkbox"/>Comedy<br/>
+   <input name="genre" type="checkbox"/>SciFi
+  </th>
+  <th width="300px">
+   <input name="marital" type="radio">Married<br/>
+   <input name="marital" type="radio">Single<br/>
+   <input name="marital" type="radio">Widowed
+  </th>
+  <th>
+   <input name="tenured" type="radio">Yes<br/>
+   <input name="tenured" type="radio">No<br/>
+  </th>
+  <th>
+   <textarea cols="10"
+             placeholder="Biography"
+             title="tooltip">Some text</textarea>
+  </th>
+  <th>
+   <input    size="2"
+             type="password"/>
+  </th>
+  <th>
+   <input     size="2"
+              type="email"/>
+  </th>
+  <th>
+   <input     size="2"
+              type="number" min="0" max="200000"/>
+  </th>
+  <th>
+   <select>
+    <option>Faculty</option>
+    <option>Student</option>
+   </select>
+  </th>
+  <th>Last Name</th>
+ </tr>
+
+ </thead>
+ <tbody>
+ <tr>
+  <td>alice</td><td>****</td><td>alice@wonderland.com</td><td align="right">100000</td><td>Alice</td><td>Wonderland</td>
+ </tr>
+ <tr>
+  <td>bob</td><td>****</td><td>bob@marley.com</td><td align="right">12000</td><td>Bob</td><td>Marley</td>
+ </tr>
+ </tbody>
+</table>
+
+</body>
+</html>
