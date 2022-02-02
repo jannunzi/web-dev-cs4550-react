@@ -69,3 +69,66 @@ p#p1 {
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
 }
+
+.width-50pc {
+    width: 50%;
+}
+
+.width-33pc {
+    width: 33%;
+}
+
+.float-left {
+    float: left
+}
+
+.clear-both {
+    clear: both;
+}
+
+.height-150px {
+    height: 150px;
+}
+
+.overflow-auto {
+    overflow: auto;
+}
+
+.smaller-width {
+    width: 300px;
+    overflow: auto;
+}
+
+.width-500px {
+    width: 500px;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+    body {
+        background-color: yellow;
+    }
+    .media-query {
+        background-color: red;
+        color: white;
+    }
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+    body {
+        background-color: blue;
+        color: white;
+    }
+    .media-query {
+        background-color: yellow;
+        color: black;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1800px) {
+    body {
+        background-color: red;
+        color: white;
+    }
+    .media-query {
+        background-color: blue;
+        color: white;
+    }
+}
