@@ -1,0 +1,41 @@
+.bg-blue {
+    background-color: lightblue;
+}
+
+.bg-yellow {
+    background-color: lightyellow;
+}
+
+.bg-red {
+    background-color: lightcoral;
+}
+
+
+.wd-bottom-right {
+    color: red;
+    position: fixed;
+    bottom:10px;
+    right: 10px;
+}
+
+
+/*.btn-success {*/
+/*    color: black;*/
+/*    font-weight: bolder;*/
+/*    background-color: #41f005;*/
+/*    border-color: black;*/
+/*    border-radius: 20px;*/
+/*}*/
+
+.form-control {
+    /*font-size: 2em;*/
+}
+
+
+
+.list-group-item.active {
+    background-color: #408121;
+    border-color: #fd390d;
+    border-width: 15px;
+    border-style: dashed;
+}
