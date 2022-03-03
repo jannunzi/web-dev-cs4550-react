@@ -1,42 +1,16 @@
 import TuitItem from "./TuitItem";
-import {useState} from 'react';
 
-const TUITS = [
-  {title: "Tuit ABC"},
-  {title: "Tuit XYZ"},
-  {title: "Tuit RST"},
-  {title: "Tuit 321"},
-]
-
-const TuitList = () => {
-  const [tuits, setTuits] = useState(TUITS);
-  const [newTuitTitle, setNewTuitTitle] = useState("Brand New Tuit");
-  const title = "List of Tuits";
-
-  const createTuit = () => {
-    const newTuit = {
-      title: newTuitTitle
-    };
-    const newTuits = [newTuit, ...tuits];
-    setTuits(newTuits);
-  }
-
-  const deleteTuit = (tuitToDelete) => {
-    // alert('delete tuit')
-    const newTuits = tuits.filter(tuit => {
-      if (tuit === tuitToDelete) {
-        return false;
-      } else {
-        return true;
-      }
-    });
-    setTuits(newTuits)
-  }
-
+const TuitList = (
+  {
+    setNewTuitTitle,
+    newTuitTitle,
+    createTuit,
+    deleteTuit,
+    tuits
+  }) => {
   return(
-    <div className="container">
-      <h1>{title}</h1>
-
+    <div>
+      <h1>Tuit List</h1>
       <textarea
         onChange={(event) => {
           setNewTuitTitle(event.target.value)
@@ -46,7 +20,7 @@ const TuitList = () => {
         className="form-control"></textarea>
 
       <button onClick={() => {createTuit()}}
-        className="btn btn-primary rounded-pill">
+              className="btn btn-primary rounded-pill">
         Tuit
       </button>
       <ul className="list-group">
@@ -59,7 +33,6 @@ const TuitList = () => {
         }
       </ul>
     </div>
-  );
-};
-
-export default TuitList;
+  )
+}
+export default TuitList

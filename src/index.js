@@ -3,13 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import TuitList from "./components/TuitList";
+import TuitApp from "./components/TuitApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <TuitList/>
-    <TuitList/>
-    <TuitList/>
+    <TuitApp/>
   </React.StrictMode>,
   document.getElementById('root')
 );
