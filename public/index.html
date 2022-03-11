@@ -25,15 +25,85 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      /*li {*/
+      /*  margin-bottom: 20px;*/
+      /*}*/
+    </style>
   </head>
   <body>
   <div id="root"></div>
+  <hr/>
+  <ul>
+    <li><input value="Text field"/></li>
+    <li><input type="password" value="Text field"/></li>
+    <li><input type="number" value="123"/></li>
+    <li><input type="date" value="2022-11-08"/></li>
+    <li><input type="email" value="alice@wonderland.com"/></li>
+    <li><input type="radio"/>Yes&nbsp;&nbsp;
+        <input type="radio"/>No</li>
+    <li><input type="checkbox"/> Yellow<br/>
+        <input type="checkbox"/> Blue<br/>
+        <input type="checkbox"/> Red</li>
+    <li><input type="button" value="Click me"/></li>
+
+  </ul>
+
+  Marital status:<br/>
+  <input id="married" type="radio" name="marital"/>
+  <label for="married">Married</label>
+  <input id="single" type="radio"
+         checked name="marital"/>
+  <label for="single">Single</label>
+  <input id="widowed" type="radio"
+         name="marital"/>
+  <label for="single">Widowed</label><br/>
+
+  Self employed:<br/>
+  <input id="employed-yes" type="radio" name="employed"/>
+  <label for="employed-yes">Yes</label>
+  <input id="employed-no" type="radio"
+         checked name="employed"/>
+  <label for="employed-no">No</label><br/>
+
+  Topics of interest<br/>
+  <input name="interest" id="space" type="checkbox" checked><label for="space">Space</label>
+  <input name="interest" id="energy" type="checkbox" checked><label for="energy">Energy</label>
+  <input name="interest" id="politics" type="checkbox"><label for="politics">Politics</label>
+
+  Favorite genres<br/>
+  <input name="genre" type="checkbox" checked>SciFi<br/>
+  <input name="genre" type="checkbox">Fantasy<br/>
+  <input name="genre" type="checkbox" checked>Comedy<br/>
+  <input name="genre" type="checkbox">Drama<br/>
+
   <h1>Web Dev Assignments</h1>
   <ul>
     <li><a href="labs/a2/index.html">Assignment 2 Labs</a></li>
     <li><a href="tuiter/navigation.html">Tuiter</a></li>
     <li><a href="lectures/index.html">Lectures</a></li>
   </ul>
+
+  <ul>
+    <li>Buy milk</li>
+    <li>Walk dog</li>
+    <li>Pick up kids</li>
+  </ul>
+  
+  <ol>
+    <li>Go to college</li>
+    <li>Graduate</li>
+    <li>Get a great job</li>
+  </ol>
+  
+  <button>Post a new tuit</button>
+
+  <b>This text is bolded</b>
+<u>This text is underlined</u>
+<h1>This is the largest heading</h1>
+<h6>This is the smallest heading</h6>
+
+
 
   </body>
 </html>
