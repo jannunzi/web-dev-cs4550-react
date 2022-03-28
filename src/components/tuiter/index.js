@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import TuitsList from "./TuitsList";
 
 const Tuiter = () => {
     return(
@@ -10,7 +11,7 @@ const Tuiter = () => {
           <Link to="/">
             Labs
           </Link>
-
+          <TuitsList/>
         </div>
     )
 }
