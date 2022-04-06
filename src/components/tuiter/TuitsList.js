@@ -33,22 +33,22 @@ const TuitsList = () => {
   return(
     <div>
       <h2>Tuit List {tuits.length}</h2>
-      <ul>
-        <li>
-          <input onChange={(e) => {
+      <ul className="list-group">
+        <li className="list-group-item">
+          <button className="btn btn-primary float-end" onClick={createTuit}>Tuit</button>
+          <input className="form-control w-75" onChange={(e) => {
             setTuit({...tuit, tuit: e.target.value})
           }}/>
-          <button onClick={createTuit}>Tuit</button>
         </li>
         {
           tuits.map(tuit =>
-          <li>
+          <li className="list-group-item">
             {tuit.tuit} {tuit.likes}
-            <button onClick={() => updateTuit({...tuit, likes: tuit.likes + 1})}>Like2</button>
-            <button onClick={() => updateTuit({...tuit, likes: tuit.likes - 1})}>UnLike2</button>
-            <button onClick={() => {likeTuit(tuit)}}>Like</button>
-            <button onClick={() => {unlikeTuit(tuit)}}>Unlike</button>
-            <button onClick={() => {deleteTuit(tuit)}}>Delete</button>
+            <button className="float-end btn btn-danger" onClick={() => {deleteTuit(tuit)}}>Delete</button>
+            <button className="float-end me-1 btn btn-info" onClick={() => updateTuit({...tuit, likes: tuit.likes + 1})}>Like2</button>
+            <button className="float-end me-1 btn btn-info" onClick={() => updateTuit({...tuit, likes: tuit.likes - 1})}>UnLike2</button>
+            <button className="float-end me-1 btn btn-info" onClick={() => {likeTuit(tuit)}}>Like</button>
+            <button className="float-end me-1 btn btn-info" onClick={() => {unlikeTuit(tuit)}}>Unlike</button>
           </li>
           )
         }
