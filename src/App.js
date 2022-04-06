@@ -13,6 +13,7 @@ import HelloWorld from "./components/hello-world";
 import HomeScreen from "./components/tuiter/home-screen";
 import ExploreScreen from "./components/tuiter/explore-screen";
 import NotificationScreen from "./components/tuiter/notification-screen";
+import UserList from "./components/user-list";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/">
+            <Route path="users"
+                   element={<UserList/>}/>
             <Route path="labs"
                    element={<Labs/>}/>
             <Route path="hello"
