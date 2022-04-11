@@ -14,6 +14,9 @@ import HomeScreen from "./components/tuiter/home-screen";
 import ExploreScreen from "./components/tuiter/explore-screen";
 import NotificationScreen from "./components/tuiter/notification-screen";
 import UserList from "./components/user-list";
+import SearchOmdb from "./screens/search-omdb";
+import DetailsOmdb from "./screens/details-omdb";
+import Nav from "./screens/nav";
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/">
+            <Route path="omdb" element={<SearchOmdb/>}/>
+            <Route path="omdb/:searchString" element={<SearchOmdb/>}/>
+            <Route path="omdb/details/:imdbID" element={<DetailsOmdb/>}/>
             <Route path="users"
                    element={<UserList/>}/>
             <Route path="labs"
