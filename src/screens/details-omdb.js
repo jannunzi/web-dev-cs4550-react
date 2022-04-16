@@ -3,7 +3,22 @@ import {useParams} from "react-router-dom";
 import Pre from "../utils/pre";
 import axios from "axios";
 
+const api = axios.create({
+  withCredentials: true
+});
+
 const DetailsOmdb = () => {
+  const [currentUser, setCurrentUser] = useState(null)
+
+  const fetchCurrentUser = async () => {
+    try {
+      const response = await api.post("http://localhost:4000/api/profile")
+      setCurrentUser(response.data)
+    } catch (e) {
+      // navigate('/')
+    }
+  }
+
   const [movieDetails, setMovieDetails] = useState({})
   const [ourMovieDetails, setOurMovieDetails] = useState({})
   const OMDB_URL = 'https://www.omdbapi.com/?apikey=852159f0&i'
@@ -19,16 +34,18 @@ const DetailsOmdb = () => {
   useEffect(() => {
     fetchMovieByImdbIDFromOmdb()
     fetchMovieByImdbIDFromOurApi()
+    fetchCurrentUser()
   }, [])
 
-  const handleLikes = () => {
+  const handleLikes = async () => {
     console.log(movieDetails)
     const movie = {
       title: movieDetails.Title,
       poster: movieDetails.Poster,
       imdbID: movieDetails.imdbID
     }
-    axios.post("http://localhost:4000/api/likes", movie)
+    const response = await axios.post("http://localhost:4000/api/likes", movie)
+    setOurMovieDetails(response.data)
   }
 
   return (
@@ -45,13 +62,19 @@ const DetailsOmdb = () => {
       {/*{movieDetails.Actors.split(',')*/}
       {/*  .map(actor => <li>{actor}</li>)}*/}
       {/*</ul>*/}
-      <button onClick={handleLikes}>
-        Like ({ourMovieDetails.likes})
-      </button>
-      <button>Dislike</button>
-      <h2>Leave a comment</h2>
-      <textarea></textarea>
-      <button>Post</button>
+
+      {
+        currentUser && <div>
+          <button onClick={handleLikes}>
+            Like ({ourMovieDetails && ourMovieDetails.likes})
+          </button>
+          <button>Dislike</button>
+          <h2>Leave a comment</h2>
+          <textarea></textarea>
+          <button>Post</button>
+        </div>
+      }
+
 
       <ul>
         <li>Alice liked this movie</li>
