@@ -2,22 +2,23 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import Pre from "../utils/pre";
 import axios from "axios";
+import SecureContent from "../components/secure-content";
 
 const api = axios.create({
   withCredentials: true
 });
 
 const DetailsOmdb = () => {
-  const [currentUser, setCurrentUser] = useState(null)
-
-  const fetchCurrentUser = async () => {
-    try {
-      const response = await api.post("http://localhost:4000/api/profile")
-      setCurrentUser(response.data)
-    } catch (e) {
-      // navigate('/')
-    }
-  }
+  // const [currentUser, setCurrentUser] = useState(null)
+  //
+  // const fetchCurrentUser = async () => {
+  //   try {
+  //     const response = await api.post("http://localhost:4000/api/profile")
+  //     setCurrentUser(response.data)
+  //   } catch (e) {
+  //     // navigate('/')
+  //   }
+  // }
 
   const [movieDetails, setMovieDetails] = useState({})
   const [ourMovieDetails, setOurMovieDetails] = useState({})
@@ -34,7 +35,7 @@ const DetailsOmdb = () => {
   useEffect(() => {
     fetchMovieByImdbIDFromOmdb()
     fetchMovieByImdbIDFromOurApi()
-    fetchCurrentUser()
+    // fetchCurrentUser()
   }, [])
 
   const handleLikes = async () => {
@@ -63,17 +64,17 @@ const DetailsOmdb = () => {
       {/*  .map(actor => <li>{actor}</li>)}*/}
       {/*</ul>*/}
 
-      {
-        currentUser && <div>
+      <SecureContent>
+        <div>
           <button onClick={handleLikes}>
-            Like ({ourMovieDetails && ourMovieDetails.likes})
+            Like ({ourMovieDetails && ourMovieDetails.likes}) !!!!!
           </button>
           <button>Dislike</button>
           <h2>Leave a comment</h2>
           <textarea></textarea>
           <button>Post</button>
         </div>
-      }
+      </SecureContent>
 
 
       <ul>

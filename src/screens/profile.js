@@ -1,29 +1,37 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {useProfile} from "../contexts/profile-context";
 
 const api = axios.create({
   withCredentials: true
 });
 
 const Profile = () => {
-  const [currentUser, setCurrentUser] = useState({})
   const navigate = useNavigate()
-  const fetchCurrentUser = async () => {
+  const {profile, signout} = useProfile()
+  
+  const logout = async () => {
     try {
-      const response = await api.post("http://localhost:4000/api/profile")
-      setCurrentUser(response.data)
+      await signout()
     } catch (e) {
-      navigate('/')
+      
     }
+    navigate('/signin')
   }
-  useEffect(() => {
-    fetchCurrentUser()
-  }, [])
+  
   return (
     <div>
       <h1>Profile</h1>
-      {JSON.stringify(currentUser)}
+      <button
+        onClick={logout}
+        className="btn btn-danger">
+        Logout
+      </button>
+      {profile && profile.email}
+      <Link to="/omdb">
+        Search movies
+      </Link>
     </div>
   );
 };

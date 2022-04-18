@@ -21,17 +21,24 @@ import Signup from "./screens/signup";
 import Profile from "./screens/profile";
 import Signin from "./screens/signin";
 import Pre from "./utils/pre";
+import {ProfileProvider} from "./contexts/profile-context";
+import SecureRoute from "./components/secure-route";
 
 function App() {
   return (
+    <ProfileProvider>
     <BrowserRouter>
       <div className="container">
         <Routes>
           <Route path="/">
-            <Route path="/profile" element={<Profile/>}/>
+            <Route path="/profile" element={
+              <SecureRoute>
+                <Profile/>
+              </SecureRoute>
+            }/>
             <Route path="/signin" element={<Signin/>}/>
             <Route path="/signup" element={<Signup/>}/>
-            <Route path="omdb" element={<SearchOmdb/>}/>
+            <Route path="/omdb" element={<SearchOmdb/>}/>
             <Route path="omdb/:searchString" element={<SearchOmdb/>}/>
             <Route path="omdb/details/:imdbID" element={<DetailsOmdb/>}/>
             <Route path="users"
@@ -53,6 +60,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
+    </ProfileProvider>
   );
 }
 
