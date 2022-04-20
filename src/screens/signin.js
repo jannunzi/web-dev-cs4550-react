@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {useProfile} from "../contexts/profile-context";
 
 const api = axios.create({
@@ -47,6 +47,9 @@ const Signin = () => {
         className="btn btn-primary">
         Signin
       </button>
+      <Link className="float-end" to="/signup">
+        Signup
+      </Link>
     </div>
   );
 };
